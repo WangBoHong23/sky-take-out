@@ -20,9 +20,12 @@ public class GlobalExceptionHandler {
      * 捕获业务异常
      * @param ex
      * @return
+     *
      */
     @ExceptionHandler
     public Result exceptionHandler(SQLIntegrityConstraintViolationException ex){
+        //针对新增员工id存在方案1
+        //捕获指定得sql以Duplicate entry开头得异常
         String message =ex.getMessage();
         if (message.contains("Duplicate entry")){
             String[] split =message.split(" ");

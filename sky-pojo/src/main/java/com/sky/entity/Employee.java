@@ -32,6 +32,7 @@ public class Employee implements Serializable {
 
     private Integer status;
 
+    //针对员工分页查询操作时间字段显示有问题方式一（不推荐，不能全局修改）
     //@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createTime;
 

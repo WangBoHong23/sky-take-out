@@ -17,6 +17,7 @@ mybatis:
   #mapper配置文件
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.sky.entity
+  #实体的别名映射，实体名默认就是实体的别名（可以再xml文件中直接书写它的类名，大小写不区分）
   configuration:
     #开启驼峰命名
     map-underscore-to-camel-case: true
