@@ -3,7 +3,9 @@ package com.sky.dto;
 import lombok.Data;
 
 import java.io.Serializable;
-
+/*
+* 分页查询 根据需求文档封装的接口
+* */
 @Data
 public class DishPageQueryDTO implements Serializable {
 

@@ -18,7 +18,10 @@ spring:
       access-key-id: ${sky.alioss.access-key-id}
       access-key-secret: ${sky.alioss.access-key-secret}
       bucket-name: ${sky.alioss.bucket-name}
-
+  redis:
+    host: ${sky.redis.host}
+    port: ${sky.redis.port}
+    database: ${sky.redis.database}
 mybatis:
   #mapper配置文件
   mapper-locations: classpath:mapper/*.xml

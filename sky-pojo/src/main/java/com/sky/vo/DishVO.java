@@ -11,6 +11,9 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+*针对分页查询前端传输的信息分装的对象
+* */
 @Data
 @Builder
 @NoArgsConstructor

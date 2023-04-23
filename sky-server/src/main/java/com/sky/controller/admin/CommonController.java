@@ -39,20 +39,22 @@ public class CommonController {
         log.info("文件上传：{}",file);
 
         try {
-            //原始文件名
+            //获取原始文件名
             String originalFilename = file.getOriginalFilename();
-            //截取原始文件名的后缀   dfdfdf.png
+            //截取原始文件名的后缀   dfdfdf  ’.png‘
             String extension = originalFilename.substring(originalFilename.lastIndexOf("."));
-            //构造新文件名称
+            //构造新文件名称  把原始名的后缀加上UUID新生成的文件名名进行拼接成一个新的字符串
             String objectName = UUID.randomUUID().toString() + extension;
 
             //文件的请求路径
+            //file.getBytes():文件对象转成的数组   objectName阿里云的文件名字，防止重名利用UUID看来生成名字
             String filePath = aliOssUtil.upload(file.getBytes(), objectName);
+            //成功返回文件访问路径
             return Result.success(filePath);
         } catch (IOException e) {
             log.error("文件上传失败：{}", e);
         }
-
+        //动态输出  MessageConstant.UPLOAD_FAILED 文件上传失败
         return Result.error(MessageConstant.UPLOAD_FAILED);
     }
 }

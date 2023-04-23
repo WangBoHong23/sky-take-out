@@ -4,8 +4,10 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sky.mapper.DishFlavorMapper">
     <insert id="insertBatch">
+        /*对应dish_flavor口味表*/
         insert into dish_flavor (dish_id, name, value) VALUES
         <foreach collection="flavors" item="df" separator=",">
+        /*foreach:动态sql遍历   collection="flavors":获取变量名为flavors形参对象 item="df":给遍历出来的值取名  separator=",":逗号分割*/
             (#{df.dishId},#{df.name},#{df.value})
         </foreach>
     </insert>
